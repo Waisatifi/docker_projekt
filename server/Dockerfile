@@ -1,10 +1,12 @@
 FROM node
 
-WORKDIR /usr/src/app
+WORKDIR /serverdata
 
-COPY package*.json ./
+# RUN mkdir -p /serverdata/
+COPY package*.json .
 
 RUN npm install
+
 
 COPY . .
 

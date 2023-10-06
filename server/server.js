@@ -14,9 +14,8 @@ const randomText = crypto.randomBytes(1024).toString('hex');
 fs.writeFileSync('random.txt', randomText);
 
 
-app.get('/download',(req,res)=>{
-    res.send("mooi")
-    checksum.file('./serverdata/random.txt', (err, sum) => {
+app.get('/',(req,res)=>{
+    checksum.file('./random.txt', (err, sum) => {
         if (err) {
             console.error('Virhe tiedoston tarkistussumman laskemisessa:', err); 
             return
@@ -24,8 +23,8 @@ app.get('/download',(req,res)=>{
         console.log('Tiedosto "random.txt" luotu satunnaisella tekstillä.');
         console.log('Tarkistussumma:', sum);
 
-        res.setHeader("checksum arvo",sum)
-        res.download('./serverdata/random.txt')
+        res.setHeader("checksum-arvo",sum)
+        res.download('./random.txt')
     });
 })
 

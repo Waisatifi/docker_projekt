@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  server:
+    build:
+      context: ./server
+    ports:
+      - 3000:3000
+    volumes:
+      - servelvol:/serverdata
+    networks:
+      own-network:
+        ipv4_address: 10.5.0.5
+  
+  client:
+    build: 
+      context: ./client
+    depends_on:
+      - server
+    volumes:
+      - clientvol:/clientdata
+    networks:
+      own-network:
+        ipv4_address: 10.5.0.6
+  
+  
+volumes:
+  servelvol: {}
+  clientvol: {}
+
+networks:
+  own-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
