@@ -4,7 +4,12 @@ import fs from 'fs'
 import crypto from 'crypto'
 
 const app = express();
+const url = process.env.URL || "http://localhost";
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).send('Server is healthy');
+});
 
 
 // Generoi 1KB satunnaista tekstiä

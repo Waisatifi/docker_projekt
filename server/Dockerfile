@@ -2,7 +2,6 @@ FROM node
 
 WORKDIR /serverdata
 
-# RUN mkdir -p /serverdata/
 COPY package*.json .
 
 RUN npm install
