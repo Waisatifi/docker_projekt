@@ -9,15 +9,15 @@ Tavoitteena on lähettää 1KB kokoisen tiedoston random-tekstin kanssa palvelim
 
     chmod +x server.sh client
 
-## Käynnistä molemmat kontint hyödyntäen docker composea
+### Käynnistä molemmat kontint hyödyntäen docker composea
     
     docker-compose up
     
-## Kuinka käynnistää server kontti
+### Kuinka käynnistää server kontti
 
     bash script.sh tai ./server.sh
 
-### Parametrit
+#### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
@@ -31,11 +31,11 @@ Esimerkki:
 
     bash script.sh -n oma-verkko -p 8080 -v minunvoluumi
 
-## Kuinka käynnistää client kontti
+### Kuinka käynnistää client kontti
 
     bash client.sh tai ./client.sh
 
-### Parametrit
+#### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
