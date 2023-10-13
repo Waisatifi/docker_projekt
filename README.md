@@ -3,13 +3,7 @@
 Tämä Docker-projekti koostuu kahdesta kontista: palvelin ja asiakas, jotka viestivät keskenään. 
 Tavoitteena on lähettää 1KB kokoisen tiedoston random-tekstin kanssa palvelimelta asiakaskontille.
 
-Kursivointi *tähdillä* tai _alaviivoilla_.
 
-Lihavointi **tuplatähdillä** or __tupla-alaviivoilla__.
-
-Yhdistettynä **tähtiä sekä _alaviivoja_**.
-
-Yliviivaus tapahtuu 2 tildellä. ~~Tämä pois.~~
 ## Ohjeet palvelimien käynnistämiseen!
 
 #### Vaihe 1: Anna skripteille suoritusoikeudet
@@ -24,9 +18,8 @@ Käynnistä antamalla oikeudet skripteille ensin:
     
 ### Kuinka käynnistää palvelinkontti
 
-    Käynnistä palvelinkontti käyttämällä joko ** bash server.sh **  tai **./server.sh**.
+    Käynnistä palvelinkontti käyttämällä joko bash server.sh  tai ./server.sh.
 
-** bash server.sh **
 #### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
@@ -43,21 +36,21 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
 ### Kuinka käynnistää client kontti
 
-    Käynnistä asiakaskontti käyttämällä joko `##bash client.sh` tai `##./client.sh`.
+    Käynnistä asiakaskontti käyttämällä joko bash client.sh tai ./client.sh.
 
 #### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
-    ##-n tai ##--verkkonimi: Määritä Docker-verkko (oletuksena "oma-verkko").
+    -n tai --verkkonimi: Määritä Docker-verkko (oletuksena "oma-verkko").
 
-    ##-p tai ##--portti: Määritä portti (oletuksena "3000").
+    -p tai --portti: Määritä portti (oletuksena "3000").
 
-    ##-v tai ##--voluumit: Määritä voluumit (oletuksena "clientvol").
+    -v tai --voluumit: Määritä voluumit (oletuksena "clientvol").
 
-    ##-so tai ##--serveri_osoite: Määritä serverin osoite (oletuksena "server". Voit myös kirjoittaa sen ip)
+    -so tai --serveri_osoite: Määritä serverin osoite (oletuksena "server". Voit myös kirjoittaa sen ip)
 
-    ##-sp tai ##--serveri_portti: Määritä serverin portti (oletuksena "3000")
+    -sp tai --serveri_portti: Määritä serverin portti (oletuksena "3000")
 
 #### Esimerkki:
 
