@@ -12,6 +12,28 @@ Käynnistä antamalla oikeudet skripteille ensin:
 
     chmod u+x server.sh client.sh
 
+#### Jos tulee ongelmia ajaa bash sciriptiä niin voit muuttaa rivinvaihdot Unix-tyyppiseksi (LF) tekstieditorilla, kuten esimerkiksi Visual Studio Code:
+
+    1. Avaa skriptitiedosto Visual Studio Code -ohjelmassa.
+
+    2. Klikkaa näytön alareunassa olevaa "CRLF" tai "CR" -painiketta ja valitse "LF".
+
+    3. Tallenna tiedosto.
+
+Tämä muuttaa rivinvaihdot Unix-tyyppiseksi, ja se voi auttaa ratkaisemaan mahdollisen ongelman, 
+jos rivinvaihdot aiheuttavat epäyhteensopivuutta. 
+Sitten yritä suorittaa skripti uudelleen, ja katso, toimiiko se ilman virheitä.
+
+#### Jos et löydä alareunasta mitään niin voit toteuttaa myös tämän.
+
+    sudo apt install dos2unix
+
+Sitten muokkaa bash tiedosto
+
+    dos2unix server.sh
+    
+Kokeile nyt ajaa scipti
+
 ### Vaihe2: Käynnistä molemmat kontit käyttäen Docker Composea
     
     docker-compose up
@@ -34,18 +56,6 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
     bash script.sh -n oma-verkko -p 8080 -v minunvoluumi
 
-### Jos tulee ongelmia ajaa bash sciriptiä niin voit muuttaa rivinvaihdot Unix-tyyppiseksi (LF) tekstieditorilla, kuten esimerkiksi Visual Studio Code:
-
-    1. Avaa skriptitiedosto Visual Studio Code -ohjelmassa.
-
-    2. Klikkaa näytön alareunassa olevaa "CRLF" tai "CR" -painiketta ja valitse "LF".
-
-    3. Tallenna tiedosto.
-
-Tämä muuttaa rivinvaihdot Unix-tyyppiseksi, ja se voi auttaa ratkaisemaan mahdollisen ongelman, 
-jos rivinvaihdot aiheuttavat epäyhteensopivuutta. 
-Sitten yritä suorittaa skripti uudelleen, ja katso, toimiiko se ilman virheitä.
-
 ### Kuinka käynnistää client kontti
 
     Käynnistä asiakaskontti käyttämällä joko bash client.sh tai ./client.sh.
@@ -67,3 +77,5 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 #### Esimerkki:
 
     bash client.sh -n oma-verkko -p 8080 -v minunvoluumi -so server -sp 3000
+
+
