@@ -17,8 +17,9 @@ Käynnistä antamalla oikeudet skripteille ensin:
     
 ### Kuinka käynnistää palvelinkontti
 
-    Käynnistä palvelinkontti käyttämällä joko **bash server.sh**  tai **./server.sh**.
-    
+    Käynnistä palvelinkontti käyttämällä joko ** bash server.sh **  tai **./server.sh**.
+
+** bash server.sh **
 #### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
