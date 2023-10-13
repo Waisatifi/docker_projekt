@@ -7,32 +7,32 @@ const serverPortti = process.env.SERVER_PORTTI || 3000;
 const serverOsoite = process.env.SERVER_OSOITE || "server";
 const serverUrl = `http://${serverOsoite}:${serverPortti}`; // Palvelimen osoite ja portti
 
-const healthCheckEndpoint = "/health"; // Health check endpoint on the server
-const currentDirectory = process.cwd(); // Get the current working directory
+const healthCheckEndpoint = "/health"; // Health check endpoint palvelimella
+const currentDirectory = process.cwd(); // Haetaan nykyinen työhakemisto
 
 const checkServerAvailability = async () => {
   try {
-    // Check if the server is available by making a GET request to the health check endpoint
+    // Tarkista, onko palvelin saatavilla tekemällä GET-pyyntö health check -endpisteeseen
     await axios.get(`${serverUrl}${healthCheckEndpoint}`);
     console.log("Server is ready.");
 
-    // Proceed to download and checksum file
+    // Jatka tiedoston lataamista ja tarkistusta
     downloadAndChecksumFile();
   } catch (error) {
     console.error("Server is not ready yet. Retrying in 5 seconds...");
-    setTimeout(checkServerAvailability, 5000); // Retry after 5 seconds
+    setTimeout(checkServerAvailability, 5000); // Yritä uudellen 5 sekunnin kuluttua
   }
 };
 
 const downloadAndChecksumFile = async () => {
   try {
-    // Make a GET request to download a file from the server
+    // Tee GET-pyyntö tiedoston lataamiseksi palvelimelta
     const response = await axios.get(`${serverUrl}`, {
       responseType: "stream",
     });
     const fileName = "ladattu_tiedosto.txt";
-    const filePath = path.join(__dirname, "./", fileName); // Define the storage path inside the container
-    const filePath1 = "/clientdata/" + fileName; // Define the storage path on the host
+    const filePath = path.join(__dirname, "./", fileName); // Määritä tallennuspolku kontissa
+    const filePath1 = "/clientdata/" + fileName; // Määritä tallennuspolku isännällä
 
     const writeStream = fs.createWriteStream(filePath);
     const writeStream1 = fs.createWriteStream(filePath1);
@@ -40,13 +40,13 @@ const downloadAndChecksumFile = async () => {
     response.data.pipe(writeStream);
     response.data.pipe(writeStream1);
 
-    // Check the server-reported checksum
+    // Tarkista palvelimen ilmoittama checksum-arvo
     const serverChecksum = response.headers["checksum-arvo"];
 
     writeStream.on("finish", () => {
       console.log("File downloaded and saved.");
 
-      // Check the checksum of the downloaded file
+      // Tarkista ladatun tiedoston checksum-arvo
       checksum.file(filePath, (err, clientChecksum) => {
         if (err) {
           console.error("Error calculating file checksum:", err);
@@ -76,5 +76,5 @@ const downloadAndChecksumFile = async () => {
   }
 };
 
-// Start by checking if the server is available
+// Aloita tarkistamalla, onko palvelin saatavilla
 checkServerAvailability();
