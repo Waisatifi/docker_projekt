@@ -27,7 +27,7 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
     -v tai --voluumit: Määritä voluumit (oletuksena "servervol").
 
-Esimerkki:
+#### Esimerkki:
 
     bash script.sh -n oma-verkko -p 8080 -v minunvoluumi
 
@@ -49,6 +49,6 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
     -sp tai --serveri_portti: Määritä serverin portti (oletuksena "3000")
 
-Esimerkki:
+#### Esimerkki:
 
     bash client.sh -n oma-verkko -p 8080 -v minunvoluumi -so server -sp 3000
