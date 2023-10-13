@@ -1,9 +1,13 @@
 # docker_projekt
 
-## Anna oikeudet skripteille oikeudet ensimmäiseksi
+### Anna oikeudet skripteille oikeudet ensimmäiseksi
 
     chmod +x server.sh client
 
+## Käynnistä molemmat kontint hyödyntäen docker composea
+    
+    docker-compose up
+    
 ## Kuinka käynnistää server kontti
 
     bash script.sh tai ./server.sh
