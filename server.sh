@@ -35,4 +35,4 @@ fi
 docker build -t server-container ./server/.
 
 # Aja palvelinkontti määritetyllä verkolla, portilla ja voluumilla
-docker run -d --rm --network "$VERKKO" -v "$VOLUMET:/serverdata" --name server server-container
+docker run -d --rm --network "$VERKKO" -p "$PORTTI" -v "$VOLUMET:/serverdata" --name server server-container
