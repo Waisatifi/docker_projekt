@@ -3,6 +3,13 @@
 Tämä Docker-projekti koostuu kahdesta kontista: palvelin ja asiakas, jotka viestivät keskenään. 
 Tavoitteena on lähettää 1KB kokoisen tiedoston random-tekstin kanssa palvelimelta asiakaskontille.
 
+Kursivointi *tähdillä* tai _alaviivoilla_.
+
+Lihavointi **tuplatähdillä** or __tupla-alaviivoilla__.
+
+Yhdistettynä **tähtiä sekä _alaviivoja_**.
+
+Yliviivaus tapahtuu 2 tildellä. ~~Tämä pois.~~
 ## Ohjeet palvelimien käynnistämiseen!
 
 #### Vaihe 1: Anna skripteille suoritusoikeudet
