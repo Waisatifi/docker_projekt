@@ -1,6 +1,11 @@
-# docker_projekt
+# Docker-projekti
 
-### Anna oikeudet skripteille oikeudet ensimmäiseksi
+Tämä Docker-projekti koostuu kahdesta kontista: palvelin ja asiakas, jotka viestivät keskenään. 
+Tavoitteena on lähettää 1KB kokoisen tiedoston random-tekstin kanssa palvelimelta asiakaskontille.
+
+## Ohjeet palvelimien käynnistämiseen!
+
+#### Anna oikeudet skripteille oikeudet ensimmäiseksi
 
     chmod +x server.sh client
 
