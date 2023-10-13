@@ -5,18 +5,20 @@ Tavoitteena on lähettää 1KB kokoisen tiedoston random-tekstin kanssa palvelim
 
 ## Ohjeet palvelimien käynnistämiseen!
 
-#### Anna oikeudet skripteille oikeudet ensimmäiseksi
+#### Vaihe 1: Anna skripteille suoritusoikeudet
+
+Käynnistä antamalla oikeudet skripteille ensin:
 
     chmod +x server.sh client
 
-### Käynnistä molemmat kontint hyödyntäen docker composea
+### Vaihe2: Käynnistä molemmat kontit käyttäen Docker Composea
     
     docker-compose up
     
-### Kuinka käynnistää server kontti
+### Kuinka käynnistää palvelinkontti
 
-    bash script.sh tai ./server.sh
-
+    Käynnistä palvelinkontti käyttämällä joko `##bash server.sh` tai ##`./server.sh`.
+    
 #### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
@@ -33,21 +35,21 @@ Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
 ### Kuinka käynnistää client kontti
 
-    bash client.sh tai ./client.sh
+    Käynnistä asiakaskontti käyttämällä joko `##bash client.sh` tai `##./client.sh`.
 
 #### Parametrit
 
 Voit mukauttaa projektin käynnistämistä antamalla joitain parametreja:
 
-    -n tai --verkkonimi: Määritä Docker-verkko (oletuksena "oma-verkko").
+    ##-n tai ##--verkkonimi: Määritä Docker-verkko (oletuksena "oma-verkko").
 
-    -p tai --portti: Määritä portti (oletuksena "3000").
+    ##-p tai ##--portti: Määritä portti (oletuksena "3000").
 
-    -v tai --voluumit: Määritä voluumit (oletuksena "clientvol").
+    ##-v tai ##--voluumit: Määritä voluumit (oletuksena "clientvol").
 
-    -so tai --serveri_osoite: Määritä serverin osoite (oletuksena "server". Voit myös kirjoittaa sen ip)
+    ##-so tai ##--serveri_osoite: Määritä serverin osoite (oletuksena "server". Voit myös kirjoittaa sen ip)
 
-    -sp tai --serveri_portti: Määritä serverin portti (oletuksena "3000")
+    ##-sp tai ##--serveri_portti: Määritä serverin portti (oletuksena "3000")
 
 #### Esimerkki:
 
